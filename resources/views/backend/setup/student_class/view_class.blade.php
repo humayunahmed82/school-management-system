@@ -5,26 +5,26 @@
 <!-- ========== title-wrapper start ========== -->
 <div class="title-wrapper pt-30">
     <div class="row align-items-center">
-        <div class="col-md-6">
-            <div class="title mb-30">
-                <h2>View User</h2>
-            </div>
+      <div class="col-md-6">
+        <div class="title mb-30">
+          <h2>Class View</h2>
         </div>
-        <!-- end col -->
-        <div class="col-md-6">
-            <div class="breadcrumb-wrapper mb-30">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="{{ route('dashboard') }}">Dashboard</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            View User
-                        </li>
-                    </ol>
-                </nav>
-            </div>
+      </div>
+      <!-- end col -->
+      <div class="col-md-6">
+        <div class="breadcrumb-wrapper mb-30">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{{ route('dashboard') }}">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Class View
+                </li>
+            </ol>
+          </nav>
         </div>
+      </div>
       <!-- end col -->
     </div>
     <!-- end row -->
@@ -37,10 +37,10 @@
 
             <div class="title pb-30 d-flex border-bottom flex-wrap gap-3 align-items-center justify-content-between">
                 <div class="left">
-                    <h4 class="text-medium">User List</h4>
+                    <h4 class="text-medium">Student Class</h4>
                 </div>
                 <div class="right">
-                    <a href="{{ route('users.add') }}" class="main-btn success-btn rounded-full btn-hover">Add User</a>
+                    <a href="{{ route('student.class.add') }}" class="main-btn success-btn rounded-full btn-hover">Add Student Class</a>
                 </div>
             </div>
             <!-- End Title -->
@@ -53,13 +53,7 @@
                                 <h6 class="text-sm text-medium">SL</h6>
                             </th>
                             <th class="min-width">
-                                <h6 class="text-sm text-medium">Roll</h6>
-                            </th>
-                            <th class="min-width">
                                 <h6 class="text-sm text-medium">Name</h6>
-                            </th>
-                            <th class="min-width">
-                                <h6 class="text-sm text-medium">Email</h6>
                             </th>
                             <th>
                                 <h6 class="text-sm text-medium text-end">Actions</h6>
@@ -67,25 +61,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($allData as $key => $user)
+                        @foreach ($allData as $key => $student)
 
                         <tr>
                             <td width="6%">
                                 <p class="text-sm text-medium">{{ $key+1 }}</p>
                             </td>
                             <td>
-                                <p class="text-sm">{{ $user->usertype }}</p>
-                            </td>
-                            <td>
-                                <p class="text-sm">{{ $user->name }}</p>
-                            </td>
-                            <td>
-                                <p class="text-sm">{{ $user->email }}</p>
+                                <p class="text-sm">{{ $student->name }}</p>
                             </td>
                             <td width="10%">
                                 <div class="action gap-3 justify-content-end">
-                                    <a href="{{ route('users.edit', $user->id) }}" class="text-primary" data-bs-tooltip="tooltip" data-bs-placement="top" title="Edit"><i class="lni lni-pencil"></i></a>
-                                    <a id="delete" href="{{ route('users.delete', $user->id) }}" class="text-danger" data-bs-tooltip="tooltip" data-bs-placement="top" title="Delete"><i class="lni lni-trash-can"></i></a>
+                                    <a href="{{ route('student.class.edit', $student->id) }}" class="text-primary" data-bs-tooltip="tooltip" data-bs-placement="top" title="Edit"><i class="lni lni-pencil"></i></a>
+                                    <a id="delete" href="{{ route('student.class.delete', $student->id) }}" class="text-danger" data-bs-tooltip="tooltip" data-bs-placement="top" title="Delete"><i class="lni lni-trash-can"></i></a>
                                 </div>
                             </td>
                         </tr>

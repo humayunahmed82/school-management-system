@@ -16,10 +16,10 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="#0">Dashboard</a>
+                    <a href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#0">User</a>
+                    <a href="{{ route('user.view') }}">User</a>
                 </li>
                 <li class="breadcrumb-item active">
                     Add User

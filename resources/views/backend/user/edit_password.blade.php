@@ -16,10 +16,10 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="#0">Dashboard</a>
+                    <a href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#0">Profile</a>
+                    <a href="{{ route('profile.view') }}">Profile</a>
                 </li>
                 <li class="breadcrumb-item active">
                     Change Password

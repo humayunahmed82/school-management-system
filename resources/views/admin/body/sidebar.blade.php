@@ -72,7 +72,7 @@
 
                 <span class="divider"><hr /></span>
 
-                <li class="nav-item {{ ($prefix == '/profile')? 'active':'' }} nav-item-has-children">
+                <li class="nav-item {{ ($prefix == '/setups')? 'active':'' }} nav-item-has-children">
                     <a href="#" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_3">
                         <span class="icon">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,14 +81,17 @@
                                 />
                             </svg>
                         </span>
-                        <span class="text">Manage Profile</span>
+                        <span class="text">Setup Management</span>
                     </a>
-                    <ul id="ddmenu_3" class="collapse dropdown-nav {{ ($prefix == '/profile')? 'show':'' }}">
+                    <ul id="ddmenu_3" class="collapse dropdown-nav {{ ($prefix == '/setups')? 'show':'' }}">
                         <li>
-                            <a class="{{ ($route == 'profile.view')? 'active':'' }}" href="{{ route('profile.view') }}"> Your Profile </a>
+                            <a class="{{ ($route == 'student.class.view')? 'active':'' }}" href="{{ route('student.class.view') }}"> Student Class </a>
                         </li>
                         <li>
-                            <a class="{{ ($route == 'password.view')? 'active':'' }}" href="{{ route('password.view') }}"> Change Password </a>
+                            <a class="{{ ($route == 'student.year.view')? 'active':'' }}" href="{{ route('student.year.view') }}"> Student Year </a>
+                        </li>
+                        <li>
+                            <a class="{{ ($route == 'student.group.view')? 'active':'' }}" href="{{ route('student.group.view') }}"> Student Group </a>
                         </li>
                     </ul>
                 </li>
