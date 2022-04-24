@@ -42,7 +42,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="input-style-1">
-                    <label>Student Group*</label>
+                    <label>Student Group Name*</label>
                     <input type="text" name="name" value="{{ $editData->name }}" placeholder="Student Group" />
                     @error('name')
                         <span class="text-sm text-danger">{{ $message }}</span>
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="input-style-1">
-            <button type="submit" class="main-btn primary-btn rounded-full btn-hover">Add Student Group</button>
+            <button type="submit" class="main-btn primary-btn rounded-full btn-hover">Update Student Group</button>
         </div>
     </form>
 </div>

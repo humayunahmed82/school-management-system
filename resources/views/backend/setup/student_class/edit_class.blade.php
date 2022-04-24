@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="input-style-1">
-            <button type="submit" class="main-btn primary-btn rounded-full btn-hover">Add Student Class</button>
+            <button type="submit" class="main-btn primary-btn rounded-full btn-hover">Update Student Class</button>
         </div>
     </form>
 </div>

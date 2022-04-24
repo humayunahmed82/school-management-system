@@ -93,6 +93,12 @@
                         <li>
                             <a class="{{ ($route == 'student.group.view')? 'active':'' }}" href="{{ route('student.group.view') }}"> Student Group </a>
                         </li>
+                        <li>
+                            <a class="{{ ($route == 'student.shift.view')? 'active':'' }}" href="{{ route('student.shift.view') }}"> Student Shift </a>
+                        </li>
+                        {{-- <li>
+                            <a class="{{ ($route == 'fee.category.view')? 'active':'' }}" href="{{ route('fee.category.view') }}">Fee Category</a>
+                        </li> --}}
                     </ul>
                 </li>
 
