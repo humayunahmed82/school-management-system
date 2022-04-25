@@ -7,7 +7,7 @@
     <div class="row align-items-center">
       <div class="col-md-6">
         <div class="title mb-30">
-          <h2>Add Shift</h2>
+          <h2>Add Fee Category</h2>
         </div>
       </div>
       <!-- end col -->
@@ -19,10 +19,10 @@
                     <a href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{{ route('student.shift.view') }}">Student Shift</a>
+                    <a href="{{ route('fee.category.view') }}">Student Fee Category</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    Add Shift
+                    Add Fee Category
                 </li>
             </ol>
           </nav>
@@ -35,15 +35,15 @@
 <!-- ========== title-wrapper end ========== -->
 
 <div class="card-style mb-30">
-    <h6 class="mb-25">Add New Shift</h6>
+    <h6 class="mb-25">Add New Fee Category</h6>
 
-    <form action="{{ route('store.student.shift') }}" method="POST">
+    <form action="{{ route('store.fee.category') }}" method="POST">
         @csrf
         <div class="row">
             <div class="col-md-6">
                 <div class="input-style-1">
-                    <label>Student Shift Name*</label>
-                    <input type="text" name="name" placeholder="Student Shift" />
+                    <label>Student Fee Category Name*</label>
+                    <input type="text" name="name" placeholder="Student Fee Category" />
                     @error('name')
                         <span class="text-sm text-danger">{{ $message }}</span>
                     @enderror
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="input-style-1">
-            <button type="submit" class="main-btn primary-btn rounded-full btn-hover">Add Student Shift</button>
+            <button type="submit" class="main-btn primary-btn rounded-full btn-hover">Add Fee Category</button>
         </div>
     </form>
 </div>

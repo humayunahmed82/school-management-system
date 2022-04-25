@@ -10,7 +10,7 @@
 <aside class="sidebar-nav-wrapper">
     <div class="navbar-logo">
         <a href="{{ route('dashboard') }}">
-            <img src="{{ asset('backend/assets/images/logo/logo.svg') }}" alt="logo" />
+            <img src="{{ asset('backend/assets/images/logo/logo.png') }}" alt="logo" />
         </a>
     </div>
         <nav class="sidebar-nav">
@@ -96,9 +96,12 @@
                         <li>
                             <a class="{{ ($route == 'student.shift.view')? 'active':'' }}" href="{{ route('student.shift.view') }}"> Student Shift </a>
                         </li>
-                        {{-- <li>
+                        <li>
                             <a class="{{ ($route == 'fee.category.view')? 'active':'' }}" href="{{ route('fee.category.view') }}">Fee Category</a>
-                        </li> --}}
+                        </li>
+                        <li>
+                            <a class="{{ ($route == 'fee.amount.view')? 'active':'' }}" href="{{ route('fee.amount.view') }}">Fee Category Amount</a>
+                        </li>
                     </ul>
                 </li>
 

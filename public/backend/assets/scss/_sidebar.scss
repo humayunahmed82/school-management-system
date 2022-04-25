@@ -1,7 +1,7 @@
 /* =========== Sidebar css =========== */
 .sidebar-nav-wrapper {
   background: $white;
-  width: 250px;
+  width: 280px;
   padding: 20px 0px;
   height: 100vh;
   position: fixed;
@@ -15,11 +15,11 @@
   @include transform(translateX(0));
 
   @media #{$lg, $md, $xs} {
-    @include transform(translateX(-260px));
+    @include transform(translateX(-290px));
   }
 
   &.active {
-    @include transform(translateX(-260px));
+    @include transform(translateX(-290px));
 
     @media #{$lg, $md, $xs} {
       @include transform(translateX(0px));
@@ -34,12 +34,14 @@
 
   .sidebar-nav {
     .divider {
-      padding: 5px 25px;
+      padding: 0px 25px;
       width: 100%;
 
       hr {
         height: 1px;
         background: #e2e2e2;
+        opacity: 1;
+        margin: 8px 0;
       }
     }
 
@@ -95,7 +97,7 @@
                 font-size: 14px;
                 font-weight: 400;
                 border-radius: 6px;
-                padding: 8px 15px;
+                padding: 7px 20px;
                 display: flex;
                 align-items: center;
                 border: 1px solid transparent;
@@ -136,12 +138,12 @@
           display: flex;
           align-items: center;
           color: $gray;
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 500;
           width: 100%;
           position: relative;
           z-index: 1;
-          padding: 10px 25px;
+          padding: 7px 20px;
 
           &::before {
             content: "";
@@ -226,7 +228,7 @@
 
 .main-wrapper {
   @include transition(0.3s);
-  margin-left: 250px;
+  margin-left: 280px;
   min-height: 100vh;
   padding-bottom: 85px;
   position: relative;

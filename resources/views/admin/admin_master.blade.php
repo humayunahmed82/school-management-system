@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.svg') }}" type="image/x-icon"/>
-    <title>PlainAdmin Demo | Bootstrap 5 Admin Template</title>
+    <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" type="image/x-icon"/>
+    <title>Laravel 8 School Management System</title>
 
     <!-- ========== All CSS files linkup ========= -->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/bootstrap.min.css') }}" />
@@ -43,7 +43,6 @@
     <!-- ========= All Javascript files linkup ======== -->
     <script src="{{ asset('backend/assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('backend/assets/js/moment.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/js/world-merc.js') }}"></script>
     <script src="{{ asset('backend/assets/js/polyfill.js') }}"></script>
     <script src="{{ asset('backend/assets/js/datatables.min.js') }}"></script>
     <script src="{{ asset('backend/assets/js/toastr.min.js') }}"></script>
