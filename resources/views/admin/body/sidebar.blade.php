@@ -102,6 +102,9 @@
                         <li>
                             <a class="{{ ($route == 'fee.amount.view')? 'active':'' }}" href="{{ route('fee.amount.view') }}">Fee Category Amount</a>
                         </li>
+                        <li>
+                            <a class="{{ ($route == 'exam.type.view')? 'active':'' }}" href="{{ route('exam.type.view') }}">Exam Type</a>
+                        </li>
                     </ul>
                 </li>
 

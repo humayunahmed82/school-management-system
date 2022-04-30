@@ -7,7 +7,7 @@
     <div class="row align-items-center">
       <div class="col-md-6">
         <div class="title mb-30">
-          <h2>Fee Category Amount</h2>
+          <h2>Fee Category Amount Details</h2>
         </div>
       </div>
       <!-- end col -->
@@ -19,7 +19,7 @@
                     <a href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    Fee Category Amount
+                    Fee Category Amount Details
                 </li>
             </ol>
           </nav>
@@ -37,7 +37,7 @@
 
             <div class="title pb-30 d-flex border-bottom flex-wrap gap-3 align-items-center justify-content-between">
                 <div class="left">
-                    <h4 class="text-medium">Fee Category Amount List</h4>
+                    <h4 class="text-medium"><span class="text-bold">Fee Category : </span> {{ $detailsData[0]['fee_category']['name'] }}</h4>
                 </div>
                 <div class="right">
                     <a href="{{ route('fee.amount.add') }}" class="main-btn success-btn rounded-full btn-hover">Add Fee Category</a>
@@ -53,28 +53,25 @@
                                 <h6 class="text-sm text-medium">SL</h6>
                             </th>
                             <th class="min-width">
-                                <h6 class="text-sm text-medium">Fee Category</h6>
+                                <h6 class="text-sm text-medium">Class Name</h6>
                             </th>
-                            <th>
-                                <h6 class="text-sm text-medium text-end">Actions</h6>
+                            <th width="15%">
+                                <h6 class="text-sm text-medium">Amount</h6>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($allData as $key => $amount)
+                        @foreach ($detailsData as $key => $detail)
 
                         <tr>
                             <td width="6%">
                                 <p class="text-sm text-medium">{{ $key+1 }}</p>
                             </td>
                             <td>
-                                <p class="text-sm">{{ $amount['fee_category']['name'] }}</p>
+                                <p class="text-sm">{{ $detail['student_classes']['name'] }}</p>
                             </td>
-                            <td width="10%">
-                                <div class="action gap-3 justify-content-end">
-                                    <a href="{{ route('fee.amount.edit',$amount->fee_category_id) }}" class="text-primary" data-bs-tooltip="tooltip" data-bs-placement="top" title="Edit"><i class="lni lni-pencil"></i></a>
-                                    <a href="{{ route('fee.amount.details',$amount->fee_category_id) }}"  class="text-secondary" data-bs-tooltip="tooltip" data-bs-placement="top" title="View Details"><i class="lni lni-eye"></i></a>
-                                </div>
+                            <td width="15%">
+                                <p class="text-sm">{{ $detail->amount }}</p>
                             </td>
                         </tr>
 
