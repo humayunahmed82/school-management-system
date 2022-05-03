@@ -66,7 +66,7 @@ class AssingSubjectController extends Controller
         if ($request->subject_id == NULL) {
 
             $notification = array(
-                'message' => 'Sorry You do not Select any class amount',
+                'message' => 'Sorry You do not Select any Subject',
                 'alert-type' => 'error'
             );
 
@@ -96,6 +96,12 @@ class AssingSubjectController extends Controller
             return redirect()->route('assing.subject.view', $class_id)->with($notification);
         }
 
+    }
+
+    public function AssingSubjectDetails($class_id){
+        $data['detailsData'] = AssingSubject::where('class_id', $class_id)->orderBy('subject_id', 'asc')->get();
+
+        return view('backend.setup.assing_subject.details_assing_subject', $data);
     }
 
 }

@@ -7,7 +7,7 @@
     <div class="row align-items-center">
       <div class="col-md-6">
         <div class="title mb-30">
-          <h2>Fee Category Amount Details</h2>
+          <h2>Assing Subject Details</h2>
         </div>
       </div>
       <!-- end col -->
@@ -18,8 +18,11 @@
                 <li class="breadcrumb-item">
                     <a href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
+                <li class="breadcrumb-item">
+                    <a href="{{ route('assing.subject.view') }}">Assing Subject</a>
+                </li>
                 <li class="breadcrumb-item active">
-                    Fee Category Amount Details
+                    Assing Subject Details
                 </li>
             </ol>
           </nav>
@@ -37,10 +40,10 @@
 
             <div class="title pb-30 d-flex border-bottom flex-wrap gap-3 align-items-center justify-content-between">
                 <div class="left">
-                    <h4 class="text-medium"><span class="text-bold">Fee Category : </span> {{ $detailsData[0]['fee_category']['name'] }}</h4>
+                    <h4 class="text-medium"><span class="text-bold">Assing Subject : </span> {{ $detailsData[0]['student_classes']['name'] }}</h4>
                 </div>
                 <div class="right">
-                    <a href="{{ route('fee.amount.add') }}" class="main-btn success-btn rounded-full btn-hover">Add Fee Category</a>
+                    <a href="{{ route('fee.amount.add') }}" class="main-btn success-btn rounded-full btn-hover">Add Assing Subject</a>
                 </div>
             </div>
             <!-- End Title -->
@@ -52,11 +55,17 @@
                             <th width="6%">
                                 <h6 class="text-sm text-medium">SL</h6>
                             </th>
-                            <th class="min-width">
-                                <h6 class="text-sm text-medium">Class Name</h6>
+                            <th width="20%" class="min-width">
+                                <h6 class="text-sm text-medium">Subject</h6>
                             </th>
-                            <th width="15%">
-                                <h6 class="text-sm text-medium">Amount</h6>
+                            <th width="20%" class="min-width">
+                                <h6 class="text-sm text-medium">Full Mark</h6>
+                            </th>
+                            <th width="20%" class="min-width">
+                                <h6 class="text-sm text-medium">Pass Mark</h6>
+                            </th>
+                            <th width="20%" class="min-width">
+                                <h6 class="text-sm text-medium">Subjective Mark</h6>
                             </th>
                         </tr>
                     </thead>
@@ -67,11 +76,17 @@
                             <td width="6%">
                                 <p class="text-sm text-medium">{{ $key+1 }}</p>
                             </td>
-                            <td>
-                                <p class="text-sm">{{ $detail['student_classes']['name'] }}</p>
+                            <td width="20%">
+                                <p class="text-sm">{{ $detail['subject']['name'] }}</p>
                             </td>
-                            <td width="15%">
-                                <p class="text-sm">{{ $detail->amount }}</p>
+                            <td width="20%">
+                                <p class="text-sm">{{ $detail->full_mark }}</p>
+                            </td>
+                            <td width="20%">
+                                <p class="text-sm">{{ $detail->pass_mark }}</p>
+                            </td>
+                            <td width="20%">
+                                <p class="text-sm">{{ $detail->subjective_mark }}</p>
                             </td>
                         </tr>
 

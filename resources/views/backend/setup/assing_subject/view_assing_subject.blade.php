@@ -73,7 +73,7 @@
                             <td width="10%">
                                 <div class="action gap-3 justify-content-end">
                                     <a href="{{ route('assing.subject.edit', $assing->class_id) }}" class="text-primary" data-bs-tooltip="tooltip" data-bs-placement="top" title="Edit"><i class="lni lni-pencil"></i></a>
-                                    <a href=""  class="text-secondary" data-bs-tooltip="tooltip" data-bs-placement="top" title="View Details"><i class="lni lni-eye"></i></a>
+                                    <a href="{{ route('assing.subject.details', $assing->class_id) }}"  class="text-secondary" data-bs-tooltip="tooltip" data-bs-placement="top" title="View Details"><i class="lni lni-eye"></i></a>
                                 </div>
                             </td>
                         </tr>

@@ -205,4 +205,5 @@ Route::prefix('setups')->group(function(){
 
     Route::post('assing/subject/update/{class_id}', [AssingSubjectController::class, 'AssingSubjectUpdate'])->name('assing.subject.update');
 
+    Route::get('assing/subject/details/{class_id}', [AssingSubjectController::class, 'AssingSubjectDetails'])->name('assing.subject.details');
 });

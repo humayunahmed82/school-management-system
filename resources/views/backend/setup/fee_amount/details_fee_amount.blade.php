@@ -18,6 +18,9 @@
                 <li class="breadcrumb-item">
                     <a href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
+                <li class="breadcrumb-item">
+                    <a href="{{ route('fee.amount.view') }}">Fee Category Amount</a>
+                </li>
                 <li class="breadcrumb-item active">
                     Fee Category Amount Details
                 </li>

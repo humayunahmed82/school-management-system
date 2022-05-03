@@ -10,5 +10,8 @@ class AssingSubject extends Model
     public function student_classes(){
         return $this->belongsTo(StudentClass::class, 'class_id', 'id');
     }
+    public function subject(){
+        return $this->belongsTo(Subject::class, 'subject_id', 'id');
+    }
 
 }
