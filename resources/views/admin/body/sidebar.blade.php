@@ -105,6 +105,12 @@
                         <li>
                             <a class="{{ ($route == 'exam.type.view')? 'active':'' }}" href="{{ route('exam.type.view') }}">Exam Type</a>
                         </li>
+                        <li>
+                            <a class="{{ ($route == 'subject.view')? 'active':'' }}" href="{{ route('subject.view') }}">Subject</a>
+                        </li>
+                        <li>
+                            <a class="{{ ($route == 'assing.subject.view')? 'active':'' }}" href="{{ route('assing.subject.view') }}">Assing Subject</a>
+                        </li>
                     </ul>
                 </li>
 

@@ -10,6 +10,8 @@ use App\Http\Controllers\Backend\setup\StudentGroupController;
 use App\Http\Controllers\Backend\Setup\StudentShiftController;
 use App\Http\Controllers\Backend\setup\StudentYearController;
 use App\Http\Controllers\Backend\Setup\ExamTypeController;
+use App\Http\Controllers\Backend\Setup\SubjectController;
+use App\Http\Controllers\Backend\Setup\AssingSubjectController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -164,8 +166,7 @@ Route::prefix('setups')->group(function(){
     Route::get('fee/amount/details/{fee_category_id}', [FeeAmountController::class, 'DetailsFeeAmount'])->name('fee.amount.details');
 
 
-    // Exam Type
-    // Fee Category Route
+    // Exam Type Route
     Route::get('exam/type/view', [ExamTypeController::class, 'ViewExamType'])->name('exam.type.view');
 
     Route::get('exam/type/add', [ExamTypeController::class, 'AddExamType'])->name('exam.type.add');
@@ -178,5 +179,30 @@ Route::prefix('setups')->group(function(){
 
     Route::get('exam/type/delete/{id}', [ExamTypeController::class, 'ExamTypeDelete'])->name('exam.type.delete');
 
+
+    // Subject Route
+    Route::get('subject/view', [SubjectController::class, 'ViewSubject'])->name('subject.view');
+
+    Route::get('subject/add', [SubjectController::class, 'AddSubject'])->name('subject.add');
+
+    Route::post('subject/store', [SubjectController::class, 'StoreSubject'])->name('store.subject');
+
+    Route::get('subject/edit/{id}', [SubjectController::class, 'EditSubject'])->name('subject.edit');
+
+    Route::post('subject/update/{id}', [SubjectController::class, 'UpdateSubject'])->name('subject.update');
+
+    Route::get('subject/delete/{id}', [SubjectController::class, 'DeleteSubject'])->name('subject.delete');
+
+
+    // Assing Subject Route
+    Route::get('assing/subject/view', [AssingSubjectController::class, 'AssingSubjectView'])->name('assing.subject.view');
+
+    Route::get('assing/subject/add', [AssingSubjectController::class, 'AssingSubjectAdd'])->name('assing.subject.add');
+
+    Route::post('assing/subject/store', [AssingSubjectController::class, 'AssingSubjectStore'])->name('store.assing.subject');
+
+    Route::get('assing/subject/edit/{class_id}', [AssingSubjectController::class, 'AssingSubjectEdit'])->name('assing.subject.edit');
+
+    Route::post('assing/subject/update/{class_id}', [AssingSubjectController::class, 'AssingSubjectUpdate'])->name('assing.subject.update');
 
 });
