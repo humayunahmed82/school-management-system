@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class SubjectController extends Controller
 {
     public function ViewSubject(){
-        $data['allDate'] = Subject::all();
+        $data['allData'] = Subject::all();
 
         return view('backend.setup.subject.view_subject', $data);
     }

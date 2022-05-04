@@ -111,6 +111,27 @@
                         <li>
                             <a class="{{ ($route == 'assing.subject.view')? 'active':'' }}" href="{{ route('assing.subject.view') }}">Assing Subject</a>
                         </li>
+                        <li>
+                            <a class="{{ ($route == 'designation.view')? 'active':'' }}" href="{{ route('designation.view') }}">Designation</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item {{ ($prefix == '/students')? 'active':'' }} nav-item-has-children">
+                    <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_4">
+                        <span class="icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                d="M3.66675 4.58325V16.4999H19.2501V4.58325H3.66675ZM5.50008 14.6666V6.41659H8.25008V14.6666H5.50008ZM10.0834 14.6666V11.4583H12.8334V14.6666H10.0834ZM17.4167 14.6666H14.6667V11.4583H17.4167V14.6666ZM10.0834 9.62492V6.41659H17.4167V9.62492H10.0834Z"
+                                />
+                            </svg>
+                        </span>
+                        <span class="text">Student Management</span>
+                    </a>
+                    <ul id="ddmenu_4" class="collapse dropdown-nav {{ ($prefix == '/setups')? 'show':'' }}">
+                        <li>
+                            <a class="{{ ($route == 'student.regitration.view')? 'active':'' }}" href="{{ route('student.regitration.view') }}">Student Registration</a>
+                        </li>
                     </ul>
                 </li>
 

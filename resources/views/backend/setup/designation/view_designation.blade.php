@@ -7,7 +7,7 @@
     <div class="row align-items-center">
       <div class="col-md-6">
         <div class="title mb-30">
-          <h2>Subject</h2>
+          <h2>Designation</h2>
         </div>
       </div>
       <!-- end col -->
@@ -19,7 +19,7 @@
                     <a href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    Subject
+                    Designation
                 </li>
             </ol>
           </nav>
@@ -37,10 +37,10 @@
 
             <div class="title pb-30 d-flex border-bottom flex-wrap gap-3 align-items-center justify-content-between">
                 <div class="left">
-                    <h4 class="text-medium">Subject List</h4>
+                    <h4 class="text-medium">Designation List</h4>
                 </div>
                 <div class="right">
-                    <a href="{{ route('subject.add') }}" class="main-btn success-btn rounded-full btn-hover">Add Subject</a>
+                    <a href="{{ route('designation.add') }}" class="main-btn success-btn rounded-full btn-hover">Add Designation</a>
                 </div>
             </div>
             <!-- End Title -->
@@ -61,19 +61,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($allData as $key => $subject)
+                        @foreach ($allData as $key => $designation)
 
                         <tr>
                             <td width="6%">
                                 <p class="text-sm text-medium">{{ $key+1 }}</p>
                             </td>
                             <td>
-                                <p class="text-sm">{{ $subject->name }}</p>
+                                <p class="text-sm">{{ $designation->name }}</p>
                             </td>
                             <td width="10%">
                                 <div class="action gap-3 justify-content-end">
-                                    <a href="{{ route('subject.edit', $subject->id) }}" class="text-primary" data-bs-tooltip="tooltip" data-bs-placement="top" title="Edit"><i class="lni lni-pencil"></i></a>
-                                    <a id="delete" href="{{ route('subject.delete', $subject->id) }}" class="text-danger" data-bs-tooltip="tooltip" data-bs-placement="top" title="Delete"><i class="lni lni-trash-can"></i></a>
+                                    <a href="{{ route('designation.edit', $designation->id) }}" class="text-primary" data-bs-tooltip="tooltip" data-bs-placement="top" title="Edit"><i class="lni lni-pencil"></i></a>
+                                    <a id="delete" href="{{ route('designation.delete', $designation->id) }}" class="text-danger" data-bs-tooltip="tooltip" data-bs-placement="top" title="Delete"><i class="lni lni-trash-can"></i></a>
                                 </div>
                             </td>
                         </tr>

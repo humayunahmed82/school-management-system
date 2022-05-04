@@ -12,6 +12,8 @@ use App\Http\Controllers\Backend\setup\StudentYearController;
 use App\Http\Controllers\Backend\Setup\ExamTypeController;
 use App\Http\Controllers\Backend\Setup\SubjectController;
 use App\Http\Controllers\Backend\Setup\AssingSubjectController;
+use App\Http\Controllers\Backend\Setup\DesignationController;
+use App\Http\Controllers\Backend\Student\StudentRegController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -206,4 +208,32 @@ Route::prefix('setups')->group(function(){
     Route::post('assing/subject/update/{class_id}', [AssingSubjectController::class, 'AssingSubjectUpdate'])->name('assing.subject.update');
 
     Route::get('assing/subject/details/{class_id}', [AssingSubjectController::class, 'AssingSubjectDetails'])->name('assing.subject.details');
+
+
+    // Designation Route
+    Route::get('designation/view', [DesignationController::class, 'ViewDesignation'])->name('designation.view');
+
+    Route::get('designation/add', [DesignationController::class, 'AddDesignation'])->name('designation.add');
+
+    Route::post('designation/store', [DesignationController::class, 'StoreDesignation'])->name('store.designation');
+
+    Route::get('designation/edit/{id}', [DesignationController::class, 'EditDesignation'])->name('designation.edit');
+
+    Route::post('designation/update/{id}', [DesignationController::class, 'UpdateDesignation'])->name('designation.update');
+
+    Route::get('designation/delete/{id}', [DesignationController::class, 'DeleteDesignation'])->name('designation.delete');
+
+});
+
+
+// Student Management Roll All
+
+Route::prefix('students')->group(function(){
+
+    Route::get('/regitration/view', [StudentRegController::class, 'StudentRegitrationView'])->name('student.regitration.view');
+
+    // Route::get('/regitration/edit', [StudentRegController::class, 'ProfileEdit'])->name('profile.edit');
+
+    // Route::post('/regitration/store', [StudentRegController::class, 'ProfileStore'])->name('profile.store');
+
 });
