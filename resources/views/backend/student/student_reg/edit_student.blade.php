@@ -7,7 +7,7 @@
     <div class="row align-items-center">
       <div class="col-md-6">
         <div class="title mb-30">
-          <h2>Add Designation</h2>
+          <h2>Edit Student</h2>
         </div>
       </div>
       <!-- end col -->
@@ -19,10 +19,10 @@
                     <a href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{{ route('designation.view') }}">Designation</a>
+                    <a href="{{ route('student.regitration.view') }}">Student</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    Add Designation
+                    Edit Student
                 </li>
             </ol>
           </nav>
@@ -35,15 +35,15 @@
 <!-- ========== title-wrapper end ========== -->
 
 <div class="card-style mb-30">
-    <h6 class="mb-25">Add New Designation</h6>
+    <h6 class="mb-25">Edit Student</h6>
 
-    <form action="{{ route('store.designation') }}" method="POST">
+    <form action="{{ route('designation.update',$editData->id) }}" method="POST">
         @csrf
         <div class="row">
             <div class="col-md-6">
                 <div class="input-style-1">
-                    <label>Designation Name*</label>
-                    <input type="text" name="name" placeholder="Designation" />
+                    <label>Student name*</label>
+                    <input type="text" name="name" value="{{ $editData->name }}" placeholder="Student" />
                     @error('name')
                         <span class="text-sm text-danger">{{ $message }}</span>
                     @enderror
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="input-style-1">
-            <button type="submit" class="main-btn primary-btn rounded-full btn-hover">Add Designation</button>
+            <button type="submit" class="main-btn primary-btn rounded-full btn-hover">Update Student</button>
         </div>
     </form>
 </div>

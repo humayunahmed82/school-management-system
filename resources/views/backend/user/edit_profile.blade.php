@@ -67,7 +67,7 @@
                     <label>Gender*</label>
                     <div class="select-position">
                         <select name="gender" id="gender">
-                            <option value="" disabled>Select Gender</option>
+                            <option value="" selected disabled>Select Gender</option>
                             <option value="Male" {{ $editData->gender == "Male" ? "selected":"" }} >Male</option>
                             <option value="Female" {{ $editData->gender == "Female" ? "selected":"" }}>Female</option>
                         </select>

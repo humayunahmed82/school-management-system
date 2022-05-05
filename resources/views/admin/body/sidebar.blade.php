@@ -28,6 +28,7 @@
                     </a>
                 </li>
 
+                @if (Auth::user()->role=='Admin')
                 <li class="nav-item {{ ($prefix == '/users')? 'active':'' }} nav-item-has-children">
                     <a href="#" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_1">
                         <span class="icon">
@@ -48,6 +49,7 @@
                         </li>
                     </ul>
                 </li>
+                @endif
 
                 <li class="nav-item {{ ($prefix == '/profile')? 'active':'' }} nav-item-has-children">
                     <a href="#" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_2">
@@ -128,7 +130,7 @@
                         </span>
                         <span class="text">Student Management</span>
                     </a>
-                    <ul id="ddmenu_4" class="collapse dropdown-nav {{ ($prefix == '/setups')? 'show':'' }}">
+                    <ul id="ddmenu_4" class="collapse dropdown-nav {{ ($prefix == '/students')? 'show':'' }}">
                         <li>
                             <a class="{{ ($route == 'student.regitration.view')? 'active':'' }}" href="{{ route('student.regitration.view') }}">Student Registration</a>
                         </li>

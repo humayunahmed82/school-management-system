@@ -44,10 +44,10 @@
                 <div class="select-style-1">
                     <label>User Role*</label>
                     <div class="select-position">
-                        <select name="usertype" id="usertype">
+                        <select name="role" id="role">
                             <option value="" selected disabled>Select Role</option>
                             <option value="Admin">Admin</option>
-                            <option value="User">User</option>
+                            <option value="Operator">Operator</option>
                         </select>
                     </div>
                 </div>
@@ -64,12 +64,7 @@
                     <input type="email" name="email" placeholder="email" />
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="input-style-1">
-                    <label>User Password*</label>
-                    <input type="password" name="password" placeholder="Password" />
-                </div>
-            </div>
+
         </div>
         <div class="input-style-1">
             <button type="submit" class="main-btn primary-btn rounded-full btn-hover">Add User</button>

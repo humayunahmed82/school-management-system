@@ -232,8 +232,8 @@ Route::prefix('students')->group(function(){
 
     Route::get('/regitration/view', [StudentRegController::class, 'StudentRegitrationView'])->name('student.regitration.view');
 
-    // Route::get('/regitration/edit', [StudentRegController::class, 'ProfileEdit'])->name('profile.edit');
+    Route::get('/regitration/add', [StudentRegController::class, 'StudentRegitrationAdd'])->name('student.regitration.add');
 
-    // Route::post('/regitration/store', [StudentRegController::class, 'ProfileStore'])->name('profile.store');
+    Route::post('/regitration/store', [StudentRegController::class, 'StudentRegitrationStore'])->name('store.student.regitration');
 
 });
