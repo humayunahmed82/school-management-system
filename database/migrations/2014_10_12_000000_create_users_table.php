@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('usertype')->nullable()->comment('Student, Employee,Admin');
             $table->string('name')->nullable();
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
 

@@ -33,7 +33,55 @@
 
 <div class="row">
     <div class="col-lg-12">
+
         <div class="card-style">
+            <div class="title pb-30 d-flex border-bottom flex-wrap gap-3 align-items-center justify-content-between">
+                <div class="left">
+                    <h4 class="text-medium">Student List</h4>
+                </div>
+            </div>
+            <!-- End Title -->
+
+            <div class="card-body">
+                <form action="#" method="">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="select-style-1">
+                                <label>Year*</label>
+                                <div class="select-position">
+                                    <select name="year_id" id="year_id" required>
+                                        <option value="" selected disabled>Select Year</option>
+                                        @foreach ($years as $year)
+                                        <option value="{{ $year->id }}" >{{ $year->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="select-style-1">
+                                <label>Class*</label>
+                                <div class="select-position">
+                                    <select name="class_id" id="class_id" required>
+                                        <option value="" selected disabled>Select Class</option>
+                                        @foreach ($classes as $class)
+                                        <option value="{{ $class->id }}" >{{ $class->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="select-style-1 pt-30">
+                                <button class="main-btn warning-btn btn-hover">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card-style mt-30">
 
             <div class="title pb-30 d-flex border-bottom flex-wrap gap-3 align-items-center justify-content-between">
                 <div class="left">
