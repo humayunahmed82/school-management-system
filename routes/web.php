@@ -13,7 +13,9 @@ use App\Http\Controllers\Backend\Setup\ExamTypeController;
 use App\Http\Controllers\Backend\Setup\SubjectController;
 use App\Http\Controllers\Backend\Setup\AssingSubjectController;
 use App\Http\Controllers\Backend\Setup\DesignationController;
+use App\Http\Controllers\Backend\Student\RegistrationFeeContoller;
 use App\Http\Controllers\Backend\Student\StudentRegController;
+use App\Http\Controllers\Backend\Student\StudentRollController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -235,5 +237,34 @@ Route::prefix('students')->group(function(){
     Route::get('/regitration/add', [StudentRegController::class, 'StudentRegitrationAdd'])->name('student.regitration.add');
 
     Route::post('/regitration/store', [StudentRegController::class, 'StudentRegitrationStore'])->name('store.student.regitration');
+
+    Route::get('/year/class/wise', [StudentRegController::class, 'StudentClassYearWise'])->name('student.year.class.wise');
+
+    Route::get('/regitration/edit/{student_id}', [StudentRegController::class, 'StudentRegitrationEdit'])->name('student.regitration.edit');
+
+    Route::post('/regitration/update/{student_id}', [StudentRegController::class, 'UpdateStudentRegitration'])->name('update.student.regitration');
+
+    Route::get('/regitration/promotion/{student_id}', [StudentRegController::class, 'StudentRegitrationPromotion'])->name('student.regitration.promotion');
+
+    Route::post('/regitration/update/promotion/{student_id}', [StudentRegController::class, 'UpdateStudentPromotion'])->name('promotion.student.regitration');
+
+    Route::get('/regitration/details/{student_id}', [StudentRegController::class, 'StudentRegitrationDetails'])->name('student.regitration.details');
+
+
+    // Roll Generate
+    Route::get('/roll/generate/view', [StudentRollController::class, 'StudentRollView'])->name('roll.generate.view');
+
+    Route::get('/regitration/getstudents', [StudentRollController::class, 'GetStudents'])->name('student.registration.getstudents');
+
+    Route::post('/roll/generate/store', [StudentRollController::class, 'StudentRollStore'])->name('roll.generate.store');
+
+
+    // Registration Fee
+    Route::get('/registration/fee/view', [RegistrationFeeContoller::class, 'RegistrationFeeView'])->name('registration.fee.view');
+
+    Route::get('/registration/fee/classwisedata', [RegistrationFeeContoller::class, 'RegistrationFeeClassData'])->name('student.registration.fee.classwise.get');
+
+    Route::get('/registration/fee/payslip', [RegistrationFeeContoller::class, 'RegistrationFeePayslip'])->name('student.registration.fee.payslip');
+
 
 });

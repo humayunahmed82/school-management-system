@@ -46,6 +46,7 @@
     <script src="{{ asset('backend/assets/js/polyfill.js') }}"></script>
     <script src="{{ asset('backend/assets/js/datatables.min.js') }}"></script>
     <script src="{{ asset('backend/assets/js/toastr.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/handlebars.min-v4.7.7.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('backend/assets/js/main.js') }}"></script>
 

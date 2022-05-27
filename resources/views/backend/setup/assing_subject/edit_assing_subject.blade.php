@@ -101,7 +101,7 @@
         </div>
 
         <div class="input-style-1">
-            <button type="submit" class="main-btn primary-btn rounded-full btn-hover">Update Fee Amount</button>
+            <button type="submit" class="main-btn primary-btn rounded-full btn-hover">Update Subject</button>
         </div>
     </form>
 </div>

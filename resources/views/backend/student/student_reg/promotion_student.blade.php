@@ -7,7 +7,7 @@
     <div class="row align-items-center">
       <div class="col-md-6">
         <div class="title mb-30">
-          <h2>Edit Student</h2>
+          <h2>Student Promotion</h2>
         </div>
       </div>
       <!-- end col -->
@@ -22,7 +22,7 @@
                     <a href="{{ route('student.regitration.view') }}">Student</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    Edit Student
+                    Student Promotion
                 </li>
             </ol>
           </nav>
@@ -35,9 +35,9 @@
 <!-- ========== title-wrapper end ========== -->
 
 <div class="card-style mb-30">
-    <h6 class="mb-25">Edit New Student</h6>
+    <h6 class="mb-25">Student Promotion</h6>
 
-    <form action="{{ route('update.student.regitration',$editData->student_id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('promotion.student.regitration',$editData->student_id) }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <input type="hidden" name="id" value="{{ $editData->id }}">
@@ -176,7 +176,7 @@
         </div>
 
         <div class="input-style-1">
-            <button type="submit" class="main-btn primary-btn rounded-full btn-hover">Update Student</button>
+            <button type="submit" class="main-btn primary-btn rounded-full btn-hover">Student Promotion</button>
         </div>
     </form>
 </div>

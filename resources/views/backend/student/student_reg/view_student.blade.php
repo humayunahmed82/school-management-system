@@ -43,7 +43,7 @@
             <!-- End Title -->
 
             <div class="card-body">
-                <form action="#" method="">
+                <form action="{{ route('student.year.class.wise') }}" method="GET">
                     <div class="row">
                         <div class="col-md-4 col-sm-6">
                             <div class="select-style-1">
@@ -52,7 +52,7 @@
                                     <select name="year_id" id="year_id" required>
                                         <option value="" selected disabled>Select Year</option>
                                         @foreach ($years as $year)
-                                        <option value="{{ $year->id }}" >{{ $year->name }}</option>
+                                        <option value="{{ $year->id }}" {{ (@$year_id == $year->id)? 'selected':'' }} >{{ $year->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -65,7 +65,7 @@
                                     <select name="class_id" id="class_id" required>
                                         <option value="" selected disabled>Select Class</option>
                                         @foreach ($classes as $class)
-                                        <option value="{{ $class->id }}" >{{ $class->name }}</option>
+                                        <option value="{{ $class->id }}"  {{ (@$class_id == $class->id)? 'selected':'' }} >{{ $class->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="col-md-4 col-sm-6">
                             <div class="select-style-1 pt-30">
-                                <button class="main-btn warning-btn btn-hover">Search</button>
+                                <button name="search" class="main-btn warning-btn btn-hover">Search</button>
                             </div>
                         </div>
                     </div>
@@ -94,6 +94,8 @@
             <!-- End Title -->
 
             <div class="table-responsive mt-30">
+                @if (!@search)
+
                 <table class="table top-selling-table" id="example">
                     <thead>
                         <tr>
@@ -106,6 +108,23 @@
                             <th class="min-width">
                                 <h6 class="text-sm text-medium">Id No</h6>
                             </th>
+                            <th class="min-width">
+                                <h6 class="text-sm text-medium">Roll</h6>
+                            </th>
+                            <th class="min-width">
+                                <h6 class="text-sm text-medium">Year</h6>
+                            </th>
+                            <th class="min-width">
+                                <h6 class="text-sm text-medium">Class</h6>
+                            </th>
+                            <th class="min-width">
+                                <h6 class="text-sm text-medium">Images</h6>
+                            </th>
+                            @if (Auth::user()->role == "Admin")
+                            <th class="min-width">
+                                <h6 class="text-sm text-medium">Code</h6>
+                            </th>
+                            @endif
                             <th  width="10%">
                                 <h6 class="text-sm text-medium text-end">Actions</h6>
                             </th>
@@ -119,15 +138,31 @@
                                 <p class="text-sm text-medium">{{ $key+1 }}</p>
                             </td>
                             <td>
-                                <p class="text-sm">{{ $value->class_id }}</p>
+                                <p class="text-sm">{{ $value['student']['name'] }}</p>
                             </td>
                             <td>
-                                <p class="text-sm">{{ $value->year_id }}</p>
+                                <p class="text-sm">{{ $value['student']['id_no'] }}</p>
+                            </td>
+                            <td>
+                                <p class="text-sm">{{ $value->roll }}</p>
+                            </td>
+                            <td>
+                                <p class="text-sm">{{ $value['student_year']['name'] }}</p>
+                            </td>
+                            <td>
+                                <p class="text-sm">{{ $value['student_class']['name'] }}</p>
+                            </td>
+                            <td>
+                                <img src="{{ (!empty($value['student']['image']))? url('upload/student_images/'.$value['student']['image']):url('upload/author.png') }}"alt="{{ $value['student']['name'] }}" style="width: 80px" />
+                            </td>
+                            <td>
+                                <p class="text-sm">{{ $value['student']['code'] }}</p>
                             </td>
                             <td width="10%">
                                 <div class="action gap-3 justify-content-end">
-                                    <a href="" class="text-primary" data-bs-tooltip="tooltip" data-bs-placement="top" title="Edit"><i class="lni lni-pencil"></i></a>
-                                    <a id="delete" href="" class="text-danger" data-bs-tooltip="tooltip" data-bs-placement="top" title="Delete"><i class="lni lni-trash-can"></i></a>
+                                    <a href="{{ route('student.regitration.edit', $value->student_id) }}" class="text-primary" data-bs-tooltip="tooltip" data-bs-placement="top" title="Edit"><i class="lni lni-pencil"></i></a>
+                                    <a href="{{ route('student.regitration.promotion', $value->student_id) }}" class="text-primary" data-bs-tooltip="tooltip" data-bs-placement="top" title="Promotion"><i class="lni lni-bullhorn"></i></a>
+                                    <a target="_blank" href="{{ route('student.regitration.details', $value->student_id) }}" class="text-primary" data-bs-tooltip="tooltip" data-bs-placement="top" title="Details"><i class="lni lni-printer"></i></a>
                                 </div>
                             </td>
                         </tr>
@@ -135,6 +170,85 @@
                         @endforeach
                     </tbody>
                 </table>
+
+                @else
+
+                <table class="table top-selling-table" id="example">
+                    <thead>
+                        <tr>
+                            <th width="6%">
+                                <h6 class="text-sm text-medium">SL</h6>
+                            </th>
+                            <th class="min-width">
+                                <h6 class="text-sm text-medium">Name</h6>
+                            </th>
+                            <th class="min-width">
+                                <h6 class="text-sm text-medium">Id No</h6>
+                            </th>
+                            <th class="min-width">
+                                <h6 class="text-sm text-medium">Roll</h6>
+                            </th>
+                            <th class="min-width">
+                                <h6 class="text-sm text-medium">Year</h6>
+                            </th>
+                            <th class="min-width">
+                                <h6 class="text-sm text-medium">Class</h6>
+                            </th>
+                            <th class="min-width">
+                                <h6 class="text-sm text-medium">Images</h6>
+                            </th>
+                            @if (Auth::user()->role == "Admin")
+                            <th class="min-width">
+                                <h6 class="text-sm text-medium">Code</h6>
+                            </th>
+                            @endif
+                            <th  width="10%">
+                                <h6 class="text-sm text-medium text-end">Actions</h6>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($allData as $key => $value)
+
+                        <tr>
+                            <td width="6%">
+                                <p class="text-sm text-medium">{{ $key+1 }}</p>
+                            </td>
+                            <td>
+                                <p class="text-sm">{{ $value['student']['name'] }}</p>
+                            </td>
+                            <td>
+                                <p class="text-sm">{{ $value['student']['id_no'] }}</p>
+                            </td>
+                            <td>
+                                <p class="text-sm">{{ $value->roll }}</p>
+                            </td>
+                            <td>
+                                <p class="text-sm">{{ $value['student_year']['name'] }}</p>
+                            </td>
+                            <td>
+                                <p class="text-sm">{{ $value['student_class']['name'] }}</p>
+                            </td>
+                            <td>
+                                <img src="{{ (!empty($value['student']['image']))? url('upload/student_images/'.$value['student']['image']):url('upload/author.png') }}" alt="{{ $value['student']['name'] }}" style="width: 80px" />
+                            </td>
+                            <td>
+                                <p class="text-sm">{{ $value['student']['code'] }}</p>
+                            </td>
+                            <td width="10%">
+                                <div class="action gap-3 justify-content-end">
+                                    <a href="{{ route('student.regitration.edit', $value->student_id) }}" class="text-primary" data-bs-tooltip="tooltip" data-bs-placement="top" title="Edit"><i class="lni lni-pencil"></i></a>
+                                    <a href="{{ route('student.regitration.promotion', $value->student_id) }}" class="text-primary" data-bs-tooltip="tooltip" data-bs-placement="top" title="Promotion"><i class="lni lni-bullhorn"></i></a>
+                                    <a target="_blank" href="{{ route('student.regitration.details', $value->student_id) }}" class="text-primary" data-bs-tooltip="tooltip" data-bs-placement="top" title="Details"><i class="lni lni-printer"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        @endforeach
+                    </tbody>
+                </table>
+
+                @endif
                 <!-- End Table -->
             </div>
 

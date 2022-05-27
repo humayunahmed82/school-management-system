@@ -134,6 +134,12 @@
                         <li>
                             <a class="{{ ($route == 'student.regitration.view')? 'active':'' }}" href="{{ route('student.regitration.view') }}">Student Registration</a>
                         </li>
+                        <li>
+                            <a class="{{ ($route == 'roll.generate.view')? 'active':'' }}" href="{{ route('roll.generate.view') }}">Roll Generate</a>
+                        </li>
+                        <li>
+                            <a class="{{ ($route == 'registration.fee.view')? 'active':'' }}" href="{{ route('registration.fee.view') }}">Registration Fee</a>
+                        </li>
                     </ul>
                 </li>
 
