@@ -4,10 +4,16 @@ namespace App\Http\Controllers\Backend\Student;
 
 use App\Http\Controllers\Controller;
 use App\Models\AssingStudent;
+use App\Models\DiscountStudent;
 use App\Models\FeeCategoryAmount;
 use App\Models\StudentClass;
 use App\Models\StudentYear;
+use App\Models\StudentGroup;
+use App\Models\StudentShift;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use PDF;
 
 class RegistrationFeeContoller extends Controller
 {
@@ -66,7 +72,16 @@ class RegistrationFeeContoller extends Controller
 
     }// end method
 
-    public function RegistrationFeePayslip(){
+    public function RegistrationFeePayslip(Request $request){
+
+        $student_id = $request->student_id;
+        $class_id = $request->class_id;
+
+        $allStudent['details'] = AssingStudent::with(['student','discount'])->where('student_id',$student_id)->where('class_id',$class_id)->first();
+
+        $pdf = PDF::loadView('backend.student.registration_fee.pdf_registration-fee', $allStudent);
+        $pdf->SetProtection(['copy', 'print'], '', 'pass');
+        return $pdf->stream('document.pdf');
 
     }
 }
