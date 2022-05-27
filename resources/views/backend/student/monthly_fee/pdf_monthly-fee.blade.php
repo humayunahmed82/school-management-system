@@ -113,7 +113,7 @@
 	<body>
 
         @php
-            $registrationfee = App\Models\FeeCategoryAmount::where('fee_category_id','1')->where('class_id',$details->class_id)->first();
+            $registrationfee = App\Models\FeeCategoryAmount::where('fee_category_id','2')->where('class_id',$details->class_id)->first();
             $originalfee = $registrationfee->amount;
             $discount = $details['discount']['discount'];
             $discounttablefee = $discount/100*$originalfee;
@@ -124,13 +124,15 @@
             <table>
                 <tr class="top">
                     <td width="40%" class="title">
-                        <h4 style="font-size: 20px">Larevel School</h4>
+                        <?php $image_path = '/upload/logo.png'; ?>
+                        <img src="{{ public_path() . $image_path  }}" alt="Logo">
                     </td>
 
                     <td width="50%">
                         School Address:<br />
-                        Phone:<br />
+                        Phone: <br />
                         Email: <br>
+                        <b>Student Monthly Fee</b> <br>
                         Print Date : {{ date('d M Y') }}
                     </td>
                 </tr>
@@ -177,7 +179,7 @@
 				</tr>
 				<tr class="item">
 					<td width="10%">7</td>
-					<td width="45%"> <strong>Registration Fee</strong> </td>
+					<td width="45%"> <strong>Monthly Fee</strong> </td>
 					<td width="45%">{{ $originalfee }}$</td>
 				</tr>
 				<tr class="item">
@@ -187,7 +189,7 @@
 				</tr>
 				<tr class="item">
 					<td width="10%">9</td>
-					<td width="45%"> <strong>Fee For this Student</strong> </td>
+					<td width="45%"> <strong>Fee For this Student of {{ $month }}</strong> </td>
 					<td width="45%">{{ $finalfee }}$</td>
 				</tr>
 
@@ -240,7 +242,7 @@
                 </tr>
                 <tr class="item">
                     <td width="10%">7</td>
-                    <td width="45%"> <strong>Registration Fee</strong> </td>
+                    <td width="45%"> <strong>Monthly Fee</strong> </td>
                     <td width="45%">{{ $originalfee }}$</td>
                 </tr>
                 <tr class="item">
@@ -250,7 +252,7 @@
                 </tr>
                 <tr class="item">
                     <td width="10%">9</td>
-                    <td width="45%"> <strong>Fee For this Student</strong> </td>
+                    <td width="45%"> <strong>Fee For this Student of {{ $month }}</strong> </td>
                     <td width="45%">{{ $finalfee }}$</td>
                 </tr>
 

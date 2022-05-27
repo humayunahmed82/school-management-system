@@ -124,13 +124,15 @@
             <table>
                 <tr class="top">
                     <td width="40%" class="title">
-                        <h4 style="font-size: 20px">Larevel School</h4>
+                        <?php $image_path = '/upload/logo.png'; ?>
+                        <img src="{{ public_path() . $image_path  }}" alt="Logo">
                     </td>
 
                     <td width="50%">
                         School Address:<br />
                         Phone:<br />
                         Email: <br>
+                        <b>Student Monthly Fee</b> <br>
                         Print Date : {{ date('d M Y') }}
                     </td>
                 </tr>

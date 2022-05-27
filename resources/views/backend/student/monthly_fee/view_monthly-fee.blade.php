@@ -45,7 +45,7 @@
             <div class="card-body">
 
                 <div class="row">
-                    <div class="col-md-4 col-sm-6">
+                    <div class="col-md-3 col-sm-6">
                         <div class="select-style-1">
                             <label>Year*</label>
                             <div class="select-position">
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6">
+                    <div class="col-md-3 col-sm-6">
                         <div class="select-style-1">
                             <label>Class*</label>
                             <div class="select-position">
@@ -71,7 +71,28 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="select-style-1">
+                            <label>Month*</label>
+                            <div class="select-position">
+                                <select name="month" id="month" required>
+                                    <option value="" selected disabled>Select Class</option>
+
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
                         <div class="select-style-1 pt-30">
                             <a id="search" class="main-btn info-btn btn-hover" name="search" >Search</a>
                         </div>
@@ -120,10 +141,11 @@
     $(document).on('click','#search',function(){
         var year_id = $('#year_id').val();
         var class_id = $('#class_id').val();
+        var month = $('#month').val();
         $.ajax({
-            url: "{{ route('student.registration.fee.classwise.get')}}",
+            url: "{{ route('student.monthly.fee.classwise.get')}}",
             type: "get",
-            data: {'year_id':year_id,'class_id':class_id},
+            data: {'year_id':year_id,'class_id':class_id,'month':month},
             beforeSend: function() {
             },
             success: function (data) {
