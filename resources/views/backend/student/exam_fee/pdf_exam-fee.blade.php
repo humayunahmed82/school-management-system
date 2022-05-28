@@ -189,7 +189,7 @@
 				</tr>
 				<tr class="item">
 					<td width="10%">9</td>
-					<td width="45%"> <strong>Fee For this Student of {{ $month }} </strong> </td>
+					<td width="45%"> <strong>Fee For this Student of {{ $month }}</strong> </td>
 					<td width="45%">{{ $finalfee }}$</td>
 				</tr>
 
@@ -252,7 +252,7 @@
                 </tr>
                 <tr class="item">
                     <td width="10%">9</td>
-                    <td width="45%"> <strong>Fee For this Student of {{ $month }} </strong> </td>
+                    <td width="45%"> <strong>Fee For this Student of {{ $month }}</strong> </td>
                     <td width="45%">{{ $finalfee }}$</td>
                 </tr>
 
