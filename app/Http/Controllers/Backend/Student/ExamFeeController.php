@@ -81,11 +81,11 @@ class ExamFeeController extends Controller
 
         $student_id = $request->student_id;
         $class_id = $request->class_id;
-
+        $data['exam_type'] = ExamType::where('id',$request->exam_type_id)->first();
 
         $data['details'] = AssingStudent::with(['student','discount'])->where('student_id',$student_id)->where('class_id',$class_id)->first();
 
-        $pdf = PDF::loadView('backend.student.monthly_fee.pdf_monthly-fee', $data);
+        $pdf = PDF::loadView('backend.student.exam_fee.pdf_exam-fee', $data);
         $pdf->SetProtection(['copy', 'print'], '', 'pass');
         return $pdf->stream('document.pdf');
 

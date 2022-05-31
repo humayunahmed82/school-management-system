@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\Student\StudentRollController;
 use App\Http\Controllers\Backend\Student\RegistrationFeeContoller;
 use App\Http\Controllers\Backend\Student\MonthlyFeeController;
 use App\Http\Controllers\Backend\Student\ExamFeeController;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
 
@@ -47,6 +48,10 @@ Route::middleware([
 });
 
 Route::get('/admin/logout', [AdminController::class, 'Logout'])->name('admin.logout');
+
+
+Route::group(['middleware' => 'auth'],function(){
+
 
 
 // User Management Roll All
@@ -286,3 +291,6 @@ Route::prefix('students')->group(function(){
 
 
 });
+
+
+}); // End Middleware Auth Route
