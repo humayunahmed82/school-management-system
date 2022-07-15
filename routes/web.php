@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\Student\StudentRollController;
 use App\Http\Controllers\Backend\Student\RegistrationFeeContoller;
 use App\Http\Controllers\Backend\Student\MonthlyFeeController;
 use App\Http\Controllers\Backend\Student\ExamFeeController;
+use App\Http\Controllers\Backend\Employee\EmployeeRegController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
@@ -291,6 +292,27 @@ Route::prefix('students')->group(function(){
 
 
 });
+
+
+// Regitration Management Roll All
+
+Route::prefix('employees')->group(function(){
+
+    Route::get('/regitration/employee/view', [EmployeeRegController::class, 'EmployeeRegitrationView'])->name('employee.regitration.view');
+
+    Route::get('/regitration/employee/add', [EmployeeRegController::class, 'EmployeeRegitrationAdd'])->name('employee.regitration.add');
+
+    Route::post('/regitration/employee/store', [EmployeeRegController::class, 'EmployeeRegitrationStore'])->name('store.employee.regitration');
+
+    Route::get('/regitration/employee/edit/{id}', [EmployeeRegController::class, 'EmployeeRegitrationEdit'])->name('employee.regitration.edit');
+
+    Route::post('/regitration/employee/update/{id}', [EmployeeRegController::class, 'EmployeeRegitrationUpdate'])->name('update.employee.regitration');
+
+    Route::get('/regitration/employee/details/{id}', [EmployeeRegController::class, 'EmployeeRegitrationDetails'])->name('employee.regitration.details');
+
+});
+
+
 
 
 }); // End Middleware Auth Route

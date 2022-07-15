@@ -36,7 +36,7 @@ return new class extends Migration
             $table->string('role')->nullable()->comment('admin=head of sotware,operator,computer operator,user=employee');
             $table->date('join_date')->nullable();
             $table->integer('designation_id')->nullable();
-            $table->double('selary')->nullable();
+            $table->double('salary')->nullable();
             $table->string('status')->default(1)->comment('0=inactive,1=active');
 
             $table->rememberToken();

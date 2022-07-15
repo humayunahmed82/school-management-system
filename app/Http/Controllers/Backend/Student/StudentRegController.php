@@ -52,7 +52,6 @@ class StudentRegController extends Controller
 
     public function StudentRegitrationStore(Request $request){
 
-
         DB::transaction(function () use($request){
             $checkYear = StudentYear::find($request->year_id)->name;
             $student = User::where('usertype', 'Student')->orderBy('id', 'DESC')->first();
